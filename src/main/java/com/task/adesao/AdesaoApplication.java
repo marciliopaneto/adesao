@@ -14,7 +14,7 @@ public class AdesaoApplication {
 	public static void main(String[] args) throws IOException {
 //		SpringApplication.run(AdesaoApplication.class, args);
 
-		String fileLocation = "/home/marcus/Documentos/Incidentes/INC000029909130 - Omni - HEXT/Instituicao_Participante_Atuacao_Adesao_OMNI_14092018_HEXT_v2.xlsx";
+		String fileLocation = "";
 		ScriptGenerator generator = new ScriptGenerator(fileLocation);
 
 		List<String> script = new ArrayList<>();
