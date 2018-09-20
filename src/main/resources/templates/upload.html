@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<style>
+    #fader {
+        opacity: 0.5;
+        background: image('/templates/1474931581.gif');
+        position: fixed;
+        top: 45%;
+        right: 45%;
+        bottom: 55%;
+        left: 55%;
+        height: auto;
+        width: auto;
+        display: none;
+    }
+</style>
+<h1>Geração de script de adesão</h1>
+
+<form method="POST" enctype="multipart/form-data" id="fileUploadForm">
+    <input type="hidden" name="extraField"/>
+    <input type="file" name="files"/><br/><br/>
+    <input type="submit" value="Gerar" id="btnSubmit"/>
+</form>
+
+<div id="fader"><img id="img-spinner" src="/templates/1474931581.gif" alt="Loading" height="196" width="196"/></div>
+
+<h3>Ajax Post Result</h3>
+<pre>
+    <span id="result"></span>
+</pre>
+
+<h3>Script Generated</h3>
+<textarea id="script" style="width: 1240px; height: 300px;"></textarea>
+
+<script type="text/javascript"
+        src="webjars/jquery/2.2.4/jquery.min.js"></script>
+
+<script type="text/javascript" src="js/main.js"></script>
+
+
+
+</body>
+</html>
