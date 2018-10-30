@@ -1,14 +1,18 @@
 package com.task.adesao;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.core.env.Environment;
 
 @EnableAutoConfiguration
 @SpringBootApplication
 public class AdesaoApplication {
 
 	private int maxUploadSizeInMb = 10 * 1024 * 1024; // 10 MB
+	@Autowired
+	Environment env;
 
 	public static void main(String[] args) throws Exception {
 		SpringApplication.run(AdesaoApplication.class, args);

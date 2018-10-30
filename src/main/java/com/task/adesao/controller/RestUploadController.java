@@ -7,9 +7,11 @@ import com.task.adesao.maker.Templates;
 import com.task.adesao.util.StrUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -31,6 +33,9 @@ import java.util.stream.Collectors;
  */
 @RestController
 public class RestUploadController {
+
+    @Autowired
+    JdbcTemplate jdbcTemplate;
 
     private final Logger logger = LoggerFactory.getLogger(RestUploadController.class);
 
@@ -122,6 +127,14 @@ public class RestUploadController {
         return new ResponseEntity("Successfully uploaded - "
                 + uploadedFileName, HttpStatus.OK);
 
+    }
+
+    @PostMapping("/api/testScript")
+    public ResponseEntity<?> testScriptOnDatabase(HttpServletRequest request,
+                                                  @RequestParam("script") String[] script) {
+        jdbcTemplate.batchUpdate();
+        return new ResponseEntity("Script validated OK.",
+                new HttpHeaders(), HttpStatus.OK);
     }
 
     //save file

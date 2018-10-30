@@ -23,4 +23,9 @@ public class StrUtil {
         }
         return sb.toString();
     }
+
+    public static String[] stringToArray(String script){
+        String[] aScript = script.split("\n");
+        return aScript;
+    }
 }
