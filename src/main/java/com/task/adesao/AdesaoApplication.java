@@ -10,12 +10,12 @@ import org.springframework.core.env.Environment;
 @SpringBootApplication
 public class AdesaoApplication {
 
-	private int maxUploadSizeInMb = 10 * 1024 * 1024; // 10 MB
-	@Autowired
-	Environment env;
+    private int maxUploadSizeInMb = 10 * 1024 * 1024; // 10 MB
+    @Autowired
+    Environment env;
 
-	public static void main(String[] args) throws Exception {
-		SpringApplication.run(AdesaoApplication.class, args);
+    public static void main(String[] args) throws Exception {
+        SpringApplication.run(AdesaoApplication.class, args);
 
 /*
 		String fileLocation = "/home/marcus/Documentos/Incidentes/INC000029909130 - Omni - HEXT/Instituicao_Participante_Atuacao_Adesao_OMNI_14092018_HEXT_v2.xlsx";
@@ -31,5 +31,5 @@ public class AdesaoApplication {
 			System.out.println(linha);
 		}
 */
-	}
+    }
 }

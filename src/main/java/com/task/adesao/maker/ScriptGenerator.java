@@ -71,7 +71,7 @@ public class ScriptGenerator {
                 InstCad instCad = new InstCad();
                 return instCad.getSQL(workbook.getSheetAt(idxSheet));
             case 1:
-                PartCad partCad =  new PartCad();
+                PartCad partCad = new PartCad();
                 return partCad.getSQL(workbook.getSheetAt(idxSheet));
             case 2:
                 PartTpAtuacao partTpAtuacao = new PartTpAtuacao();

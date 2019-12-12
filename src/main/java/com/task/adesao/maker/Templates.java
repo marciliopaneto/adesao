@@ -15,10 +15,10 @@ public class Templates {
 
     public static List getHeader(Ambiente ambiente) {
         String[] result = header.clone();
-        String a = ambiente.getDescricao().substring(0,1);
+        String a = ambiente.getDescricao().substring(0, 1);
         result[0] = StringUtils.replace(result[0], "X", a);
         List list = new ArrayList<>(result.length);
-        for (String s: result)
+        for (String s : result)
             list.add(s);
         return list;
     }

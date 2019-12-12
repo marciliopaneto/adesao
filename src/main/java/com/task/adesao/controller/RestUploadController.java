@@ -76,15 +76,14 @@ public class RestUploadController {
             HttpServletRequest request) {
 
         List<String> script = new ArrayList<>();
-        String fileLocation = (String)request.getSession().getAttribute("fileLocation");
+        String fileLocation = (String) request.getSession().getAttribute("fileLocation");
         if (fileLocation != null && !fileLocation.isEmpty()) {
             ScriptGenerator generator = new ScriptGenerator(fileLocation);
 
             Ambiente ambiente;
             if (fileLocation.contains("HEXT")) {
                 ambiente = Ambiente.HEXT;
-            } else
-            if (fileLocation.contains("PROD")) {
+            } else if (fileLocation.contains("PROD")) {
                 ambiente = Ambiente.PROD;
             } else
                 throw new ResourceNotFoundException("Ambiente", fileLocation, "");
